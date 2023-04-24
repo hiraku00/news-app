@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nextjs-app
+    volumes:
+      - ./src/app:/app
+    command: sh -c "npm run dev"
+    tty: true
+    ports:
+      - 3000:3000
